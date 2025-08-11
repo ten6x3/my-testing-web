@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>澳洲房地產市場核心報告</title>
+<style>
+  :root{
+    --bg:#ffffff;
+    --text:#1f2937;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --card:#ffffff;
+    --shadow:0 6px 18px rgba(0,0,0,.06);
+    --radius:16px;
+    --maxw:980px;
+    --accent:#111827;
+  }
+  /* Base */
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.75;
+  }
+  .container{
+    max-width:var(--maxw);
+    margin-inline:auto;
+    padding:24px clamp(16px,3vw,28px);
+  }
+  h3,h4{margin:0 0 12px}
+  h3{font-size:clamp(20px,3.2vw,28px); font-weight:800}
+  h4{font-size:clamp(18px,2.8vw,22px); font-weight:800}
+  p{margin:0 0 10px}
+  hr{
+    border:none;
+    height:1px;
+    background:var(--border);
+    margin:20px 0;
+  }
+  ul{margin:8px 0 0 1.2em}
+  li{margin:6px 0}
+
+  /* Card / blocks */
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:20px;
+    margin:16px 0;
+  }
+  .center{ text-align:center }
+
+  /* Chart block */
+  .chart{
+    position:relative;
+    height:420px;
+    border-left:2px solid #ccc;
+    border-bottom:2px solid #ccc;
+    margin-top:8px;
+    overflow:visible;
+  }
+  .chart .axis-label{
+    position:absolute;
+    font-size:.85em;
+    color:#666;
+    user-select:none;
+  }
+  .chart .axis-label.high{ left:-32px; top:-10px }
+  .chart .axis-label.low{ left:-32px; bottom:-10px }
+  .chart .year{
+    position:absolute; bottom:-28px;
+    font-size:.85em; color:#666;
+    transform:translateX(-50%);
+    white-space:nowrap;
+  }
+  .chart .y2020{ left:0% }
+  .chart .y2021{ left:20% }
+  .chart .y2022{ left:40% }
+  .chart .y2023{ left:60% }
+  .chart .y2024{ left:80% }
+  .chart .y2025{ right:0; left:auto; transform:none }
+
+  .legend{
+    display:flex; flex-wrap:wrap; justify-content:center;
+    gap:10px 16px; font-size:.95em; margin-top:20px;
+  }
+  .legend .dot{font-weight:700; margin-right:6px}
+
+  /* Tables */
+  .table-wrap{ overflow-x:auto; margin:8px 0 }
+  table{ width:100%; border-collapse:collapse; min-width:680px }
+  th,td{
+    padding:10px 12px;
+    border:1px solid var(--border);
+    text-align:left; vertical-align:top;
+  }
+  thead tr{ background:#f2f2f2 }
+  tbody tr:nth-child(even){ background:#fafafa }
+
+  /* RWD tweaks */
+  @media (max-width:720px){
+    .card{ padding:16px }
+    .chart{ height:320px }
+    .chart .year{ bottom:-24px; font-size:.8em }
+    table{ min-width:600px }
+  }
+  @media (max-width:480px){
+    .chart{ height:280px }
+    h3{ line-height:1.35 }
+  }
+
+  /* Nice links (if any appear later) */
+  a{ color:#2563eb; text-decoration:none }
+  a:hover{ text-decoration:underline }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <h3><strong>澳洲房地產市場核心報告 (外國投資者視角)</strong></h3>
+
+    <hr>
+
+    <h4><strong>1. 過去五年房價趨勢 (2020-2025)</strong></h4>
+    <p>過去五年，澳洲房市經歷了由疫情引發的空前增長，隨後因應升息而趨緩，近期又在強勁需求和供應短缺下重拾升勢。各主要城市表現分化顯著。</p>
+
+    <p><strong>澳洲主要城市獨立屋中位價變化 (2020年Q2 - 2025年Q2)</strong></p>
+    <p><em>(圖表為示意，數據基於市場綜合分析)</em></p>
+
+    <div class="card">
+      <div class="center" style="margin-bottom:10px;">
+        <strong style="font-size:1.1em;">澳洲主要城市獨立屋房價指數趨勢 (2020-2025)</strong>
+      </div>
+
+      <div class="chart">
+        <span class="axis-label high">高</span>
+        <span class="axis-label low">低</span>
+
+        <span class="year y2020">2020</span>
+        <span class="year y2021">2021</span>
+        <span class="year y2022">2022</span>
+        <span class="year y2023">2023</span>
+        <span class="year y2024">2024</span>
+        <span class="year y2025">2025</span>
+
+        <!-- Lines (kept identical points/colors to preserve the intent of the original mock) -->
+        <svg viewBox="0 0 500 400" style="position:absolute; inset:0; width:100%; height:100%;">
+          <polyline points="20,350 120,280 220,250 320,150 420,50" fill="none" stroke="#007bff" stroke-width="3"></polyline>
+        </svg>
+        <svg viewBox="0 0 500 400" style="position:absolute; inset:0; width:100%; height:100%;">
+          <polyline points="30,300 130,220 230,200 330,120 430,80" fill="none" stroke="#28a745" stroke-width="3"></polyline>
+        </svg>
+        <svg viewBox="0 0 500 400" style="position:absolute; inset:0; width:100%; height:100%;">
+          <polyline points="40,200 140,120 240,180 340,100 440,110" fill="none" stroke="#dc3545" stroke-width="3"></polyline>
+        </svg>
+        <svg viewBox="0 0 500 400" style="position:absolute; inset:0; width:100%; height:100%;">
+          <polyline points="50,220 150,150 250,210 350,190 450,200" fill="none" stroke="#ffc107" stroke-width="3"></polyline>
+        </svg>
+      </div>
+
+      <div class="legend">
+        <span><span class="dot" style="color:#007bff;">●</span> 伯斯/阿德雷德</span>
+        <span><span class="dot" style="color:#28a745;">●</span> 布里斯本</span>
+        <span><span class="dot" style="color:#dc3545;">●</span> 雪梨</span>
+        <span><span class="dot" style="color:#ffc107;">●</span> 墨爾本</span>
+      </div>
+
+      <div style="font-size:.95em; color:#333; margin-top:10px;">
+        <p><strong>趨勢解讀：</strong></p>
+        <ul>
+          <li><strong>伯斯 & 阿德雷德：</strong>增長最為強勁且持續，受惠於較高的可負擔性和礦業繁榮。</li>
+          <li><strong>布里斯本：</strong>增長穩健，受益於跨州移民和奧運前景。</li>
+          <li><strong>雪梨 & 墨爾本：</strong>經歷了劇烈波動，雖然房價最高，但增長速度因可負擔性問題而放緩。</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+    <h4><strong>2. 外國人購屋相關費用與稅務</strong></h4>
+    <p>澳洲對外國投資者購置房產設有特定審批和稅務規定。以下費用為估算，實際金額依房產價格和所在州而異。</p>
+
+    <p><strong>費用稅務概覽表</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>費用/稅務類別</th>
+            <th>細項說明</th>
+            <th>估算費用 (佔房價比例)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="4"><strong>購入階段 (一次性)</strong></td>
+            <td><strong>外國投資審查委員會 (FIRB) 申請費</strong></td>
+            <td>根據房價階梯收費，A$14,100起 (100萬澳元以下物業)</td>
+          </tr>
+          <tr>
+            <td><strong>額外印花稅 (Foreign Buyer Duty)</strong></td>
+            <td>除常規印花稅外，各州對外國人加徵。<strong>新州/維州: 8%, 昆州: 7%</strong></td>
+          </tr>
+          <tr>
+            <td><strong>常規印花稅 (Stamp Duty)</strong></td>
+            <td>各州稅率不同，採累進制。約 3% - 5.5%</td>
+          </tr>
+          <tr>
+            <td><strong>律師/過戶師費 (Legal/Conveyancing)</strong></td>
+            <td>處理法律文件及產權轉移。約 0.2% - 0.5% (A$1,500 - $3,000+)</td>
+          </tr>
+          <tr>
+            <td rowspan="4"><strong>持有階段 (年度)</strong></td>
+            <td><strong>土地稅 (Land Tax)</strong></td>
+            <td><strong>多數州對外國持有者徵收附加費 (Surcharge)。</strong> 新州: 4%, 維州: 4%</td>
+          </tr>
+          <tr>
+            <td><strong>市政費 (Council Rates)</strong></td>
+            <td>地方政府收取，用於社區設施維護。約 A$1,500 - $3,000</td>
+          </tr>
+          <tr>
+            <td><strong>水費 (Water Rates)</strong></td>
+            <td>包含服務費和使用費。約 A$800 - $1,200</td>
+          </tr>
+          <tr>
+            <td><strong>物業管理費 (Strata/Body Corporate)</strong></td>
+            <td>僅限公寓或聯排別墅。約 A$3,000 - $8,000+</td>
+          </tr>
+          <tr>
+            <td rowspan="2"><strong>傳承階段 (發生時)</strong></td>
+            <td><strong>贈與稅 (Gift Tax)</strong></td>
+            <td><strong>澳洲沒有贈與稅。</strong> 但若在贈與時出售房產，需繳納資本利得稅。</td>
+          </tr>
+          <tr>
+            <td><strong>遺產稅 (Inheritance Tax)</strong></td>
+            <td><strong>澳洲沒有遺產稅。</strong> 繼承人取得房產時無需繳稅。但若繼承人未來出售該房產，則可能需繳納資本利得稅。</td>
+          </tr>
+          <tr>
+            <td><strong>出售階段</strong></td>
+            <td><strong>資本利得稅 (Capital Gains Tax - CGT)</strong></td>
+            <td><strong>外國居民無權享受主要自住房豁免及50%的CGT折扣。</strong> 需將賣出價與買入成本的差額，按其個人所得稅率全額納稅。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>重點摘要:</strong></p>
+    <ul>
+      <li><strong>最大成本是印花稅：</strong> 常規印花稅 + 外國人額外印花稅，是前期最大的一筆開銷。</li>
+      <li><strong>持有成本高：</strong> 土地稅附加費是外國投資者需持續支付的重要成本。</li>
+      <li><strong>傳承稅務簡單：</strong> 澳洲在贈與和繼承方面稅制相對寬鬆，但未來出售時的資本利得稅是關鍵。</li>
+    </ul>
+
+    <hr>
+
+    <h4><strong>3. 未來五年趨勢預估 (2025-2030)</strong></h4>
+    <p>預計未來五年，澳洲房市將進入一個<strong>更為溫和且可持續的增長週期</strong>。房價暴漲的時代結束，市場將由基本面主導。</p>
+
+    <p><strong>未來五年房價增長預估 (年均增長率)</strong></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>主要城市</th>
+            <th>年均增長率預估</th>
+            <th>核心驅動力/阻力</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>雪梨</strong></td>
+            <td>2% - 4%</td>
+            <td>(+) 金融中心地位, 需求穩定<br>(-) 可負擔性極限, 公寓供應增加</td>
+          </tr>
+          <tr>
+            <td><strong>墨爾本</strong></td>
+            <td>1% - 3%</td>
+            <td>(+) 人口回流, 生活方式吸引力<br>(-) 房源供應充足, 投資者信心較弱</td>
+          </tr>
+          <tr>
+            <td><strong>布里斯本</strong></td>
+            <td>4% - 6%</td>
+            <td>(+) 奧運基建, 相對可負擔性, 跨州移民<br>(-) 建築成本上升</td>
+          </tr>
+          <tr>
+            <td><strong>伯斯</strong></td>
+            <td>5% - 7%</td>
+            <td>(+) 礦業經濟強勁, 極低空置率, 可負擔性佳<br>(-) 易受全球大宗商品價格影響</td>
+          </tr>
+          <tr>
+            <td><strong>阿德雷德</strong></td>
+            <td>4% - 6%</td>
+            <td>(+) 國防及科技產業發展, 可負擔性<br>(-) 經濟規模相對較小</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <h4><strong>4. 關鍵影響因素分析</strong></h4>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>影響因素</th>
+            <th>具體內容與未來走向</th>
+            <th>對房市的影響</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>利率政策</strong></td>
+            <td>澳洲聯儲 (RBA) 預計在2025-2026年逐步降息，但幅度有限。長期利率將維持在一個「新常態」水平。</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
